@@ -32,7 +32,7 @@ async def query_movies(session, payload: MoviesQuery) -> None:
 
     if payload.genres:
         for genre in payload.genres:
-            query = query.where(db.Movie.genres.any(genre))
+            query = query.where(db.Movie.genres.contains(genre))
 
     if payload.rating:
         try:
