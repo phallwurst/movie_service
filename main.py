@@ -1,5 +1,10 @@
 from fastapi import FastAPI
 
+from app import db
+
+if __name__ == "__main__":
+    db.create_all_tables()
+
 app = FastAPI(
     title="Movie API",
     version="1.0.0",
